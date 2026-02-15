@@ -16,6 +16,7 @@ def health():
     """Health check endpoint."""
     return jsonify({
         'status': 'healthy',
+        'version': '2.0-fixed',
         'documents': len(search_engine.documents)
     })
 
