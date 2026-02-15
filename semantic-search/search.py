@@ -114,3 +114,5 @@ class SemanticSearchEngine:
         
         print(f"✓ Search completed in {latency}ms")
         return response
+
+# Force update to ensure deployment triggers
