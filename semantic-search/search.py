@@ -1,5 +1,6 @@
 import json
 import time
+import math
 from embeddings import (
     get_embedding, 
     compute_document_embeddings,
@@ -95,7 +96,7 @@ class SemanticSearchEngine:
             'results': [
                 {
                     'id': r['id'],
-                    'score': round(max(0.0, min(1.0, float(r.get('score', 0.0) or 0.0))), 4),
+                    'score': round(max(0.0, min(1.0, 0.0 if math.isnan(float(r.get('score', 0.0) or 0.0)) else float(r.get('score', 0.0) or 0.0))), 4),
                     'content': r['content'],
                     'metadata': {
                         'title': r.get('title', ''),
