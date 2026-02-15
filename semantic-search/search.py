@@ -95,7 +95,7 @@ class SemanticSearchEngine:
             'results': [
                 {
                     'id': r['id'],
-                    'score': round(r['score'], 4),
+                    'score': round(max(0.0, min(1.0, float(r.get('score', 0.0) or 0.0))), 4),
                     'content': r['content'],
                     'metadata': {
                         'title': r.get('title', ''),
