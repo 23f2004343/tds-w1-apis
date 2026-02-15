@@ -96,11 +96,7 @@ class SemanticSearchEngine:
             'results': [
                 {
                     'id': r['id'],
-<<<<<<< HEAD
                     'score': round(max(0.0, min(1.0, 0.0 if math.isnan(float(r.get('score', 0.0) or 0.0)) else float(r.get('score', 0.0) or 0.0))), 4),
-=======
-                    'score': round(max(0.0, min(1.0, float(r.get('score', 0.0) or 0.0))), 4),
->>>>>>> af1699a0709c8cef6986f97a8b1bebca81e858a7
                     'content': r['content'],
                     'metadata': {
                         'title': r.get('title', ''),
